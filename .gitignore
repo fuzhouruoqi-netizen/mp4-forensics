@@ -18,3 +18,5 @@ venv/
 
 # 发布包（走 GitHub Release 附件，不进仓库）
 release/
+
+docs/preview.png

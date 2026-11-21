@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MP4 取证工具 · 一个软件替代 MediaInfo + ExifTool + MP4 Inspector</title>
+<meta name="description" content="MP4 视听数据解析与取证工具：一次解析同时给出四类软件的结果，输出三口径对比报告。Windows 免安装，下载即用。">
+<style>
+  :root{
+    --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc;
+    --brand:#2563eb; --brand2:#1d4ed8; --ok:#0f9d58; --warn:#d93025;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif}
+  a{color:var(--brand);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* hero */
+  .hero{background:linear-gradient(140deg,#0b1a33 0%,#1b3a6b 55%,#24508f 100%);color:#fff;padding:72px 0 84px}
+  .hero .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+                border-radius:999px;padding:5px 14px;font-size:13px;letter-spacing:.4px}
+  .hero h1{font-size:42px;line-height:1.25;margin:18px 0 10px;letter-spacing:-.5px}
+  .hero p{font-size:17px;color:#c7d6ee;max-width:640px;margin:0 0 28px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:12px;
+       font-weight:700;font-size:15.5px;background:#fff;color:#12305c}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+  .sub{font-size:13px;color:#9db3d4;margin-top:14px}
+
+  /* sections */
+  section{padding:62px 0}
+  h2{font-size:27px;margin:0 0 8px;letter-spacing:-.3px}
+  .lead{color:var(--muted);margin:0 0 30px;font-size:15.5px}
+
+  .grid{display:grid;gap:18px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;
+        box-shadow:0 1px 3px rgba(15,23,42,.04)}
+  .card h3{margin:0 0 8px;font-size:16.5px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .card .ico{font-size:22px;line-height:1;margin-bottom:12px}
+
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+        border-radius:14px;overflow:hidden;font-size:14.5px}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid #eef2f7;vertical-align:top}
+  th{background:#fafcff;color:var(--muted);font-size:13px;font-weight:600}
+  tr:last-child td{border-bottom:0}
+  .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
+  .tag.ok{background:#e8f7ee;color:var(--ok)}
+  .tag.no{background:#fdecea;color:var(--warn)}
+  .tag.pro{background:#eef2fb;color:#3b5aa8}
+
+  .shot{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;
+        box-shadow:0 10px 30px rgba(15,23,42,.09);display:block}
+  .shots{display:grid;grid-template-columns:1fr;gap:22px}
+  @media(min-width:820px){.shots{grid-template-columns:1.05fr .95fr;align-items:start}}
+
+  .steps{counter-reset:s;display:grid;gap:14px}
+  .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+        border-radius:14px;padding:16px 18px}
+  .step .n{counter-increment:s;flex:0 0 30px;height:30px;border-radius:50%;background:var(--brand);
+           color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px}
+  .step b{display:block;margin-bottom:2px}
+  .step span{color:var(--muted);font-size:14px}
+
+  code{background:#eef2f7;border-radius:6px;padding:2px 7px;font-size:13.5px;
+       font-family:ui-monospace,Consolas,monospace}
+  pre{background:#0b1220;color:#cbd5e1;border-radius:14px;padding:18px 20px;overflow-x:auto;font-size:13.5px}
+  pre code{background:none;padding:0;color:inherit}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--muted);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">Windows 免安装 · 不用 Python · 纯本地</span>
+    <h1>一个软件，替代<br>MediaInfo + ExifTool + MP4 Inspector</h1>
+    <p>把视频拖进去，一次解析同时给出四类软件的元数据，并生成「三口径对比报告」——自动标注哪些一致、哪些不一致、哪些只有专业工具看得到。</p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/fuzhouruoqi-netizen/mp4-forensics/releases/latest">↓ 下载 v1.0.0（20 MB）</a>
+      <a class="btn ghost" href="https://github.com/fuzhouruoqi-netizen/mp4-forensics">查看源码</a>
+    </div>
+    <div class="sub">Win10 / Win11 64 位 · 解压双击即用 · 支持 MP4 / MOV · 可批量</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>它解决什么问题</h2>
+    <p class="lead">同一份视频，四个软件给出四套数字。做检验时最麻烦的不是读不到，而是不知道该信哪个。</p>
+
+    <table>
+      <tr><th style="width:26%">原来用什么</th><th>能读到什么</th><th style="width:18%">局限</th></tr>
+      <tr><td>Windows 属性</td><td>时长、分辨率、帧率、采样率、大小</td><td><span class="tag no">取整丢精度</span></td></tr>
+      <tr><td>MediaInfo</td><td>容器、编码、码率、帧率、声道</td><td><span class="tag no">看不到底层 box</span></td></tr>
+      <tr><td>ExifTool</td><td>文件时间戳、容器时间、TimeScale</td><td><span class="tag no">字段海量难查</span></td></tr>
+      <tr><td>MP4 Inspector</td><td>box 树、mdhd 原始值、十六进制</td><td><span class="tag no">4K 大文件溢出崩溃</span></td></tr>
+    </table>
+
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card">
+        <div class="ico">🔍</div>
+        <h3>一次解析，四套结果</h3>
+        <p>系统属性、流层参数、底层 box、时间戳，全部来自同一次读取，数值可直接互相验算。</p>
+      </div>
+      <div class="card">
+        <div class="ico">⚖️</div>
+        <h3>三口径对比表</h3>
+        <p>自动判定「一致 / 不一致 / 仅专业工具可见」，把差异和原因写清楚，直接进检验记录。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🛡️</div>
+        <h3>64 位安全解析</h3>
+        <p>box size 用 64 位处理，4GB 以上、4K 60fps 大文件不会溢出——这正是 MP4 Inspector 崩掉的地方。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🧾</div>
+        <h3>证据固定</h3>
+        <p>MD5 / SHA1 / SHA-256，加上文件系统时间与容器内录制时间，两者不一致会被标红。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🎞️</div>
+        <h3>关键帧可视</h3>
+        <p>stss 同步样本列表直接列出来，判断剪辑点、I 帧间隔不用再翻十六进制。</p>
+      </div>
+      <div class="card">
+        <div class="ico">📴</div>
+        <h3>不联网</h3>
+        <p>全程本地运行，视频不出本机；生成的是自包含 HTML，双击就能看。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>界面与报告</h2>
+    <p class="lead">左边是软件本体，右边是它生成的报告——哈希、三口径对比、box 树、十六进制都在一份文件里。</p>
+    <div class="shots">
+      <img class="shot" src="img/gui.png" alt="软件界面">
+      <img class="shot" src="img/report.png" alt="生成的分析报告">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>三步用起来</h2>
+    <p class="lead">不需要装 Python，不需要敲命令。</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><b>下载并解压</b><span>解压后是一个文件夹，<code>_internal</code> 要和 exe 放一起。</span></div></div>
+      <div class="step"><div class="n">2</div><div><b>把视频拖进窗口</b><span>也可以直接拖到 exe 图标上；支持多选、批量对比。</span></div></div>
+      <div class="step"><div class="n">3</div><div><b>点「开始解析」</b><span>浏览器自动打开报告，文件生成在视频旁边：<code>视频名_报告.html</code>。</span></div></div>
+    </div>
+
+    <h2 style="margin-top:52px">也提供命令行</h2>
+    <p class="lead">要做批量分析、接进脚本，用 Python 包更顺手。</p>
+<pre><code># 安装
+pip install -e .
+
+# 看全部元数据
+mp4-forensics info 视频.mp4
+
+# 生成报告 + mdhd 十六进制
+mp4-forensics info 视频.mp4 --html 报告.html --hex moov/trak/mdia/mdhd
+
+# 替代 MP4 Inspector
+mp4-forensics tree 视频.mp4 --depth 6
+mp4-forensics hex  视频.mp4 --box moov/trak/mdia/mdhd
+
+# 三个视频横向对比
+mp4-forensics batch ./videos --html 对比.html</code></pre>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="margin-bottom:8px">
+      <a href="https://github.com/fuzhouruoqi-netizen/mp4-forensics">源码</a> ·
+      <a href="https://github.com/fuzhouruoqi-netizen/mp4-forensics/releases/latest">下载</a> ·
+      <a href="https://github.com/fuzhouruoqi-netizen/mp4-forensics/blob/main/README.md">文档</a>
+    </div>
+    MIT License · 纯 Python 标准库实现，无 ffmpeg 依赖
+  </div>
+</footer>
+
+</body>
+</html>
