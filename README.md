@@ -4,6 +4,8 @@
 
 纯 Python 标准库实现，**不依赖 ffmpeg、不依赖任何 GUI**；box 解析全程 64 位整数，直接规避 MP4 Inspector 0.1.2 在 4K 60fps 大文件上的整型溢出崩溃。
 
+**项目主页：<https://fuzhouruoqi-netizen.github.io/mp4-forensics/>** · [下载免安装版](https://github.com/fuzhouruoqi-netizen/mp4-forensics/releases/latest)
+
 ![报告预览](samples/report.png)
 
 ## 下载即用（Windows，不用装 Python）
