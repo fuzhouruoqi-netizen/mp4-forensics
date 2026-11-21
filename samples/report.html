@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>sample_avc_aac.mp4 · MP4 取证报告</title>
+<style>
+:root{--ink:#141b26;--muted:#6b7688;--line:#e4e9f2;--bg:#f5f7fb;--brand:#2f6feb;--ok:#0f9d58;--warn:#d93025;--amber:#b06b00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+header{background:linear-gradient(135deg,#1b2a4a,#2f4f8f);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:20px}
+header h1{margin:0 0 6px;font-size:22px;letter-spacing:.3px}
+header .path{font-family:ui-monospace,Consolas,monospace;font-size:12.5px;opacity:.85;word-break:break-all}
+header .meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13px;opacity:.92}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.card h2{margin:0 0 14px;font-size:16px;display:flex;align-items:center;gap:8px}
+.card h2 .tag{font-size:11.5px;font-weight:600;color:var(--brand);background:#eaf1ff;border-radius:999px;padding:2px 9px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #eef1f7;vertical-align:top}
+th{background:#fafbfe;color:var(--muted);font-weight:600;font-size:12.5px;white-space:nowrap}
+td.k{color:#33405a;font-weight:600;white-space:nowrap;width:130px}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+.pos{background:#e9f7ef;color:var(--ok);font-weight:600;border-radius:6px;padding:1px 8px;font-size:12px;display:inline-block}
+.neg{background:#fdecea;color:var(--warn);font-weight:600;border-radius:6px;padding:1px 8px;font-size:12px;display:inline-block}
+.pro{background:#eef2fb;color:#3b5aa8;font-weight:600;border-radius:6px;padding:1px 8px;font-size:12px;display:inline-block}
+.note{color:var(--muted);font-size:12.5px;margin-top:4px}
+.warn{background:#fff8e6;border:1px solid #f3e2b3;color:#7a5400;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:13px}
+.tree{font-family:ui-monospace,Consolas,monospace;font-size:12.5px;line-height:1.75;overflow-x:auto;white-space:pre}
+.tree .box{color:#1b2a4a}.tree .off{color:#98a2b3}.tree .sz{color:#6b7688}
+.hex{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:#0f172a;color:#cbd5e1;border-radius:10px;padding:14px 16px;overflow-x:auto;line-height:1.7}
+.hex .a{color:#64748b;margin-right:10px}.hex .t{color:#7dd3fc}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.kv{background:#fafbfe;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kv .k{color:var(--muted);font-size:12px}.kv .v{font-size:13.5px;font-weight:600;margin-top:2px;word-break:break-all}
+footer{color:var(--muted);font-size:12px;text-align:center;margin-top:26px}
+</style></head>
+<body><div class="wrap">
+<header>
+  <h1>sample_avc_aac.mp4</h1>
+  <div class="path">D:\Users\杨子晗\Documents\deepseek-harness\default-workspace\mp4-forensics\samples\sample_avc_aac.mp4</div>
+  <div class="meta">
+    <span>MPEG-4 isom</span>
+    <span>10 秒 0 毫秒</span>
+    <span>5.05 KB</span>
+    <span>1920×1080</span>
+    <span>30.000 FPS</span>
+  </div>
+</header>
+
+<div class="card"><h2>证据固定 <span class="tag">哈希 · 时间戳</span></h2>
+    <div class="grid">
+      <div class="kv"><div class="k">文件大小</div><div class="v">5.05 KB <span class="mono">(5176 字节)</span></div></div>
+      <div class="kv"><div class="k">SHA-256</div><div class="v mono">3df47778d60f32bbba7019432d82af15d890c964e8f04a830ce621cce06ee44f</div></div>
+      <div class="kv"><div class="k">创建时间（文件系统）</div><div class="v">2026-11-21 11:35:52</div></div>
+      <div class="kv"><div class="k">修改时间</div><div class="v">2026-11-21 11:35:52</div></div>
+    </div>
+    <div class="note">MD5 ff7bd529b5144c6cf43cdb8c904486e8 · SHA-1 25a6d60d838f7e86774d86827a274832fa2f28aa · Windows：创建时间取自 st_ctime</div>
+    </div>
+<div class="card"><h2>容器概览 <span class="tag">MediaInfo 口径</span></h2>
+    <table>
+      <tr><td class="k">容器格式</td><td>MPEG-4 <span class="mono">(isom)</span></td>
+          <td class="k">总体码率</td><td>4 kb/s</td></tr>
+      <tr><td class="k">时长</td><td>10 秒 0 毫秒</td>
+          <td class="k">轨道数</td><td>2</td></tr>
+      <tr><td class="k">录制时间（容器）</td><td>—</td>
+          <td class="k">兼容品牌</td><td class="mono">isom iso2 avc1 mp41</td></tr>
+    </table>
+    </div>
+<div class="card"><h2>视频轨 <span class="tag">MediaInfo 口径</span></h2>
+        <table>
+          <tr><td class="k">编码</td><td>AVC High@3.1</td><td class="k">码率</td><td>0.36 Mb/s</td></tr>
+          <tr><td class="k">分辨率</td><td>1920×1080</td><td class="k">帧率</td><td>30.000 FPS（恒定 (CFR)）</td></tr>
+          <tr><td class="k">时长</td><td>10 秒 0 毫秒</td><td class="k">时基 / 时长单位</td><td class="mono">15360 / 153600</td></tr>
+          <tr><td class="k">样本数</td><td>300</td><td class="k">旋转</td><td>0°</td></tr>
+          <tr><td class="k">语言</td><td>und</td><td class="k">关键帧数</td><td>3</td></tr>
+        </table></div>
+<div class="card"><h2>音频轨 <span class="tag">MediaInfo 口径</span></h2>
+        <table>
+          <tr><td class="k">编码</td><td>AAC LC</td><td class="k">码率</td><td>192 kb/s</td></tr>
+          <tr><td class="k">采样率</td><td>48.0 kHz</td><td class="k">声道数</td><td>2</td></tr>
+          <tr><td class="k">时长</td><td>10 秒 27 毫秒</td><td class="k">时基 / 时长单位</td><td class="mono">48000 / 481280</td></tr>
+        </table></div>
+<div class="card"><h2>三口径对比 <span class="tag">系统属性 / 流层 / 底层</span></h2>
+  <div class="note" style="margin-bottom:10px">一致 6 项 · 不一致 0 项 · 仅专业工具可见 6 项</div>
+  <table><thead><tr><th>字段</th><th>系统属性（Windows）</th><th>流层（MediaInfo）</th><th>底层（ExifTool / MP4 Inspector）</th><th>结论</th></tr></thead>
+  <tbody><tr>
+          <td class="k">容器格式</td>
+          <td>MP4</td>
+          <td>MPEG-4 (isom)</td>
+          <td class="mono">ftyp: isom isom iso2 avc1 mp41</td>
+          <td><span class="pos">一致</span>
+          <div class="note">系统只看扩展名，专业工具看 ftyp 里的 brand</div></td>
+        </tr><tr>
+          <td class="k">文件大小</td>
+          <td>5.05 KB（5176 字节）</td>
+          <td>5.05 KB（5176 字节）</td>
+          <td class="mono">实际字节数 5176</td>
+          <td><span class="pos">一致</span>
+          <div class="note">三者必须完全一致，否则说明读的不是同一个文件</div></td>
+        </tr><tr>
+          <td class="k">总时长</td>
+          <td>10 秒</td>
+          <td>10 秒 0 毫秒</td>
+          <td class="mono">mvhd timescale=1000, duration=10000 → 10.000s</td>
+          <td><span class="pos">一致</span>
+          <div class="note">系统属性直接取整到秒，专业工具精确到毫秒；底层是整数时基换算</div></td>
+        </tr><tr>
+          <td class="k">分辨率</td>
+          <td>1920×1080</td>
+          <td>1920×1080</td>
+          <td class="mono">tkhd width/height = 1920.0×1080.0（16.16 定点）</td>
+          <td><span class="pos">一致</span>
+          </td>
+        </tr><tr>
+          <td class="k">帧率</td>
+          <td>30 帧/秒</td>
+          <td>30.000 FPS（恒定 (CFR)）</td>
+          <td class="mono">stts 1 项, 样本数=300, mdhd 15360/153600 → 30.000</td>
+          <td><span class="pos">一致</span>
+          <div class="note">ntsc 类 59.94 与 60 的差异就是从这里来的</div></td>
+        </tr><tr>
+          <td class="k">视频编码</td>
+          <td>—</td>
+          <td>AVC High@3.1</td>
+          <td class="mono">stsd/avc + avcC High@3.1</td>
+          <td><span class="pro">仅专业工具</span>
+          </td>
+        </tr><tr>
+          <td class="k">视频码率</td>
+          <td>—</td>
+          <td>360 kb/s</td>
+          <td class="mono">stsz 合计 450000 字节 / 10.000s</td>
+          <td><span class="pro">仅专业工具</span>
+          </td>
+        </tr><tr>
+          <td class="k">音频编码</td>
+          <td>—</td>
+          <td>AAC LC</td>
+          <td class="mono">stsd/aac/esds objectType</td>
+          <td><span class="pro">仅专业工具</span>
+          </td>
+        </tr><tr>
+          <td class="k">采样率</td>
+          <td>48 kHz</td>
+          <td>48.0 kHz</td>
+          <td class="mono">sample entry 里 16.16 定点 = 48000</td>
+          <td><span class="pos">一致</span>
+          <div class="note">系统属性显示 kHz 整数，专业工具保留一位小数</div></td>
+        </tr><tr>
+          <td class="k">声道数</td>
+          <td>—</td>
+          <td>2 声道</td>
+          <td class="mono">AudioSpecificConfig channelConfig=2</td>
+          <td><span class="pro">仅专业工具</span>
+          </td>
+        </tr><tr>
+          <td class="k">音频码率</td>
+          <td>—</td>
+          <td>192 kb/s</td>
+          <td class="mono">esds avgBitrate</td>
+          <td><span class="pro">仅专业工具</span>
+          </td>
+        </tr><tr>
+          <td class="k">创建时间</td>
+          <td>文件创建时间 2026-11-21 11:35:52</td>
+          <td>—</td>
+          <td class="mono">mvhd creation_time —（1904 纪元）</td>
+          <td><span class="pro">仅系统属性</span>
+          <div class="note">文件系统时间会被复制/传输改写，容器内时间是录制当时写的，取证价值更高</div></td>
+        </tr><tr>
+          <td class="k">修改时间</td>
+          <td>2026-11-21 11:35:52</td>
+          <td>—</td>
+          <td class="mono">mvhd modification_time —</td>
+          <td><span class="pro">仅系统属性</span>
+          </td>
+        </tr><tr>
+          <td class="k">关键帧（同步样本）</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="mono">stss 共 3 个：1, 61, 121</td>
+          <td><span class="pro">仅专业工具</span>
+          <div class="note">只有底层工具能看到，用于判断剪辑点与关键帧间隔</div></td>
+        </tr></tbody></table>
+</div>
+<div class="card"><h2>关键帧（stss） <span class="tag">仅底层可见</span></h2><div class="note">共 3 个同步样本，前 40 个：</div><div class="mono" style="margin-top:6px">1, 61, 121</div></div>
+<div class="card"><h2>十六进制 <span class="tag">moov/trak/mdia/mdhd</span></h2>
+        <div class="note">offset=0x510，共 24 字节，显示前 24 字节</div>
+        <div class="hex"><span class="a">00000510</span>00 00 00 00 00 00 00 00 00 00 00 00 00 00 3c 00  <span class="t">..............&lt;.</span>
+<span class="a">00000520</span>00 02 58 00 55 c4 00 00                          <span class="t">..X.U...</span></div></div>
+<div class="card"><h2>Box 结构 <span class="tag">MP4 Inspector 口径</span></h2><div class="tree"><span class="box">&lt;root&gt;</span> <span class="sz">size=5176</span>
+<span class="off">├─ </span><span class="box">ftyp</span> <span class="off">offset=0x0</span> <span class="sz">size=32</span>
+<span class="off">├─ </span><span class="box">mdat</span> <span class="off">offset=0x20</span> <span class="sz">size=1032</span>
+<span class="off">└─ </span><span class="box">moov</span> <span class="off">offset=0x428</span> <span class="sz">size=4112</span>
+<span class="off">   ├─ </span><span class="box">mvhd</span> <span class="off">offset=0x430</span> <span class="sz">size=108</span>
+<span class="off">   ├─ </span><span class="box">trak</span> <span class="off">offset=0x49C</span> <span class="sz">size=1691</span>
+<span class="off">   │  ├─ </span><span class="box">tkhd</span> <span class="off">offset=0x4A4</span> <span class="sz">size=92</span>
+<span class="off">   │  └─ </span><span class="box">mdia</span> <span class="off">offset=0x500</span> <span class="sz">size=1591</span>
+<span class="off">   │     ├─ </span><span class="box">mdhd</span> <span class="off">offset=0x508</span> <span class="sz">size=32</span>
+<span class="off">   │     ├─ </span><span class="box">hdlr</span> <span class="off">offset=0x528</span> <span class="sz">size=37</span>
+<span class="off">   │     └─ </span><span class="box">minf</span> <span class="off">offset=0x54D</span> <span class="sz">size=1514</span>
+<span class="off">   │        ├─ </span><span class="box">vmhd</span> <span class="off">offset=0x555</span> <span class="sz">size=20</span>
+<span class="off">   │        ├─ </span><span class="box">dinf</span> <span class="off">offset=0x569</span> <span class="sz">size=36</span>
+<span class="off">   │        │  └─ </span><span class="box">dref</span> <span class="off">offset=0x571</span> <span class="sz">size=28</span>
+<span class="off">   │        └─ </span><span class="box">stbl</span> <span class="off">offset=0x58D</span> <span class="sz">size=1450</span>
+<span class="off">   │           ├─ </span><span class="box">stsd</span> <span class="off">offset=0x595</span> <span class="sz">size=122</span>
+<span class="off">   │           ├─ </span><span class="box">stts</span> <span class="off">offset=0x60F</span> <span class="sz">size=24</span>
+<span class="off">   │           ├─ </span><span class="box">stss</span> <span class="off">offset=0x627</span> <span class="sz">size=28</span>
+<span class="off">   │           ├─ </span><span class="box">stsc</span> <span class="off">offset=0x643</span> <span class="sz">size=28</span>
+<span class="off">   │           ├─ </span><span class="box">stsz</span> <span class="off">offset=0x65F</span> <span class="sz">size=1220</span>
+<span class="off">   │           └─ </span><span class="box">stco</span> <span class="off">offset=0xB23</span> <span class="sz">size=20</span>
+<span class="off">   └─ </span><span class="box">trak</span> <span class="off">offset=0xB37</span> <span class="sz">size=2305</span>
+<span class="off">      ├─ </span><span class="box">tkhd</span> <span class="off">offset=0xB3F</span> <span class="sz">size=92</span>
+<span class="off">      └─ </span><span class="box">mdia</span> <span class="off">offset=0xB9B</span> <span class="sz">size=2205</span>
+<span class="off">         ├─ </span><span class="box">mdhd</span> <span class="off">offset=0xBA3</span> <span class="sz">size=32</span>
+<span class="off">         ├─ </span><span class="box">hdlr</span> <span class="off">offset=0xBC3</span> <span class="sz">size=37</span>
+<span class="off">         └─ </span><span class="box">minf</span> <span class="off">offset=0xBE8</span> <span class="sz">size=2128</span>
+<span class="off">            ├─ </span><span class="box">smhd</span> <span class="off">offset=0xBF0</span> <span class="sz">size=16</span>
+<span class="off">            ├─ </span><span class="box">dinf</span> <span class="off">offset=0xC00</span> <span class="sz">size=36</span>
+<span class="off">            │  └─ </span><span class="box">dref</span> <span class="off">offset=0xC08</span> <span class="sz">size=28</span>
+<span class="off">            └─ </span><span class="box">stbl</span> <span class="off">offset=0xC24</span> <span class="sz">size=2068</span>
+<span class="off">               ├─ </span><span class="box">stsd</span> <span class="off">offset=0xC2C</span> <span class="sz">size=88</span>
+<span class="off">               ├─ </span><span class="box">stts</span> <span class="off">offset=0xC84</span> <span class="sz">size=24</span>
+<span class="off">               ├─ </span><span class="box">stsc</span> <span class="off">offset=0xC9C</span> <span class="sz">size=28</span>
+<span class="off">               ├─ </span><span class="box">stsz</span> <span class="off">offset=0xCB8</span> <span class="sz">size=1900</span>
+<span class="off">               └─ </span><span class="box">stco</span> <span class="off">offset=0x1424</span> <span class="sz">size=20</span></div></div>
+<footer>由 mp4-forensics 生成 · 2026-11-21 11:37:03</footer>
+</div></body></html>

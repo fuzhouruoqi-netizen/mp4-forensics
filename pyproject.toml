@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mp4-forensics"
+version = "1.0.0"
+description = "MP4 视听数据解析与取证：集成 MediaInfo、ExifTool、MP4 Inspector 的能力，输出三口径对比报告"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "fuzhouruoqi-netizen" }]
+keywords = ["mp4", "forensics", "metadata", "exif", "box"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Security",
+]
+
+[project.optional-dependencies]
+excel = ["openpyxl>=3.1"]
+dev = ["openpyxl>=3.1"]
+
+[project.scripts]
+mp4-forensics = "mp4forensics.cli:main"
+
+[tool.setuptools]
+packages = ["mp4forensics"]
