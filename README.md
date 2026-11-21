@@ -6,6 +6,21 @@
 
 ![报告预览](samples/report.png)
 
+## 下载即用（Windows，不用装 Python）
+
+**→ [下载 MP4取证工具 v1.0.0（20 MB）](https://github.com/fuzhouruoqi-netizen/mp4-forensics/releases/latest)**
+
+1. 解压 zip（整个文件夹，`_internal` 要和 exe 放一起）
+2. 双击 `MP4取证工具.exe`
+3. 把视频拖进窗口 → 点「开始解析」
+4. 自动打开报告，文件生成在视频旁边：`视频名_报告.html`
+
+![图形界面](samples/gui.png)
+
+纯本地运行、不联网；支持 MP4 / MOV，可批量拖多个。
+
+> 第一次运行 Windows 可能提示"已保护你的电脑"——打包程序没有代码签名，点「更多信息 → 仍要运行」即可。
+
 ## 对应关系
 
 | 原软件 | 用来做什么 | 本工具对应 |

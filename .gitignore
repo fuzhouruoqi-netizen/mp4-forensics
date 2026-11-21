@@ -3,6 +3,9 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+build_debug/
+dist_debug/
+*.spec
 .venv/
 venv/
 
@@ -12,3 +15,6 @@ venv/
 .idea/
 .vscode/
 .DS_Store
+
+# 发布包（走 GitHub Release 附件，不进仓库）
+release/
