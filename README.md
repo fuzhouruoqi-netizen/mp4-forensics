@@ -27,6 +27,18 @@ python -m pip install -e .          # 可选：安装后可直接用 mp4-forensi
 
 要求 Python 3.9+，无第三方运行时依赖（导出 Excel 才需要 `openpyxl`）。
 
+## Windows 最简单用法：拖拽
+
+不用记命令：
+
+1. 把仓库下载到本地（`git clone` 或页面上的 **Download ZIP** 解压）
+2. 打开 `mp4-forensics` 文件夹，把**视频文件直接拖到 `解析视频.bat` 上**
+3. 浏览器自动打开生成的报告，报告就在视频旁边：`视频名_report.html`
+
+黑色窗口里会同时打印完整解析结果。只想看命令行也行，见下面。
+
+> 没装 Python 会提示去 python.org 下载，安装时记得勾选 **Add python.exe to PATH**。
+
 ## 用法
 
 ### 1. 一次性看全（终端）
