@@ -34,7 +34,7 @@ VIDEO_EXT = (".mp4", ".mov", ".m4v", ".3gp")
 
 
 class App:
-    def __init__(self, root):
+    def __init__(self, root, initial_files=None):
         self.root = root
         self.files: list[str] = []
         self.reports: list[str] = []
@@ -62,6 +62,8 @@ class App:
         if HAS_DND:
             self.root.drop_target_register(DND_FILES)
             self.root.dnd_bind("<<Drop>>", self._on_drop)
+        if initial_files:
+            self._add(initial_files)
 
     # ---------------- UI ----------------
     def _build_ui(self):
@@ -331,8 +333,10 @@ def selftest(path):
 def main():
     if len(sys.argv) >= 2 and sys.argv[1] == "--selftest":
         sys.exit(selftest(sys.argv[2]))
+    # 把视频拖到 exe 图标上：启动时直接载入
+    initial = [a for a in sys.argv[1:] if os.path.isfile(a)]
     root = TkinterDnD.Tk() if HAS_DND else tk.Tk()
-    App(root)
+    App(root, initial)
     root.mainloop()
 
 
